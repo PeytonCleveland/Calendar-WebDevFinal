@@ -243,9 +243,9 @@ hr{
     font-size: 1.5em;
     margin-left: 25px;
     margin-right: 25px;
-    margin-top: -5px;
+    margin-top: -10px;
     width: 14%;
-    height: 80%;
+    height: 100%;
 }
 
 .calendarGrid table{
