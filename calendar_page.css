@@ -119,6 +119,7 @@ hr{
     align-items: center;
     justify-content: center;
     font-size: 1.75em;
+    margin-right:10px;
     font-family: "Raleway-Thin";
 }
 
@@ -163,7 +164,7 @@ hr{
     border-radius: 50%;
     margin-left: -30px;
     margin-top: -11px;
-    width:110px;
+    width:125px;
     height:110px;
     overflow: hidden;
     z-index: 10;
@@ -172,7 +173,6 @@ hr{
 .img-circle img{
     max-height: 100%;
     position: relative;
-    right: 30px;
     z-index: 11;
 }
 
