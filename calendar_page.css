@@ -258,8 +258,8 @@ hr{
 }
 
 .calendarGrid td{
-    width:125px;
-    height: 70px;
+    width:13%;
+    height: 20%;
     text-align: left;
     vertical-align: top;
     -webkit-user-select: none; /* Chrome/Safari */        
