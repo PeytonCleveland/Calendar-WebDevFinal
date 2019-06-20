@@ -260,7 +260,7 @@ hr{
 
 .calendarGrid td{
     width:14%;
-    height: 20%;
+    height: 100%;
     text-align: left;
     vertical-align: top;
     -webkit-user-select: none; /* Chrome/Safari */        
@@ -274,10 +274,6 @@ tbody{
     margin-left:2%;
     width:98%;
     height:98%;
-}
-
-td{
-    height:100%;
 }
 
 tr{
