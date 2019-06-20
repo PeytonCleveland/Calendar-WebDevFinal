@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href="calendar_page.css">
+        <title>Calendar</title>
+        <script src="calendar_page.js"></script>
+    </head>
+
+    <body id="body" onload="getMonth()">
+        
+        <header>
+            <div class="hLogo"><img src = "calendarLogo.png"></div>
+            <div class ="notificationBar">
+                <img onclick= "drop_notifications()" src="notifications.png" alt="Notifications">
+                <img onclick= "drop_friendRequests()" src="friendRequests.png" alt="FriendRequests">
+                <img onclick= "drop_messages()" src="envelope.png">
+                <img onclick= "drop_settings()" src="settings.png">
+            </div>
+        </header>
+        
+        <section class="calendar">
+            <div class="profile">
+                <div class="profileHeader">
+                    <div class="img-circle"><img src="profile-stock.jpg"></div>
+                    <div class="name">
+                        <h3>Shannon</h3>
+                        <h3>Brown</h3>
+                    </div>
+                </div>
+                <div class="info">
+                     <img src="genders.png">
+                    <h4>Female</h4>
+                </div>
+                <div class="info">
+                    <img src="birthday.png">
+                    <h4>Born June 8 1989</h4>
+                </div>
+                <div class="info">
+                    <img src="Profile_Location.png">
+                    <h4>Works at Amazon</h4>
+                </div>
+                <div class="info">
+                    <img src="house.png">
+                    <h4>Lives in Seattle, Washington</h4>
+                </div>
+                <hr>
+                <div class="infoFooter">
+                    <h2>Friends (231)</h2>
+                    <h2>Events (14)</h2>
+                </div>
+            </div>
+            <div class="calendarGrid">
+                <div class="calendarHeader">
+                    <h1 onclick="lastMonth()">&lt&lt</h1>
+                    <p id="month"></p>
+                    <h1 onclick="nextMonth()">&gt&gt</h1>
+                </div>
+                <div class="days">
+                    <h3>Su</h3>
+                    <h3>Mo</h3>
+                    <h3>Tu</h3>
+                    <h3>We</h3>
+                    <h3>Th</h3>
+                    <h3>Fr</h3>
+                    <h3>Sa</h3>
+                </div>
+                <hr>
+                <table id="table">
+                    <tr>
+                        <td onclick="expandDay(0, 0)"></td>
+                        <td onclick="expandDay(0, 1)"></td>
+                        <td onclick="expandDay(0, 2)"></td>
+                        <td onclick="expandDay(0, 3)"></td>
+                        <td onclick="expandDay(0, 4)"></td>
+                        <td onclick="expandDay(0, 5)"></td>
+                        <td onclick="expandDay(0, 6)"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="expandDay(1, 0)"></td>
+                        <td onclick="expandDay(1, 1)"></td>
+                        <td onclick="expandDay(1, 2)"></td>
+                        <td onclick="expandDay(1, 3)"></td>
+                        <td onclick="expandDay(1, 4)"></td>
+                        <td onclick="expandDay(1, 5)"></td>
+                        <td onclick="expandDay(1, 6)"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="expandDay(2, 0)"></td>
+                        <td onclick="expandDay(2, 1)"></td>
+                        <td onclick="expandDay(2, 2)"></td>
+                        <td onclick="expandDay(2, 3)"></td>
+                        <td onclick="expandDay(2, 4)"></td>
+                        <td onclick="expandDay(2, 5)"></td>
+                        <td onclick="expandDay(2, 6)"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="expandDay(3, 0)"></td>
+                        <td onclick="expandDay(3, 1)"></td>
+                        <td onclick="expandDay(3, 2)"></td>
+                        <td onclick="expandDay(3, 3)"></td>
+                        <td onclick="expandDay(3, 4)"></td>
+                        <td onclick="expandDay(3, 5)"></td>
+                        <td onclick="expandDay(3, 6)"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="expandDay(4, 0)"></td>
+                        <td onclick="expandDay(4, 1)"></td>
+                        <td onclick="expandDay(4, 2)"></td>
+                        <td onclick="expandDay(4, 3)"></td>
+                        <td onclick="expandDay(4, 4)"></td>
+                        <td onclick="expandDay(4, 5)"></td>
+                        <td onclick="expandDay(4, 6)"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="expandDay(5, 0)"></td>
+                        <td onclick="expandDay(5, 1)"></td>
+                        <td onclick="expandDay(5, 2)"></td>
+                        <td onclick="expandDay(5, 3)"></td>
+                        <td onclick="expandDay(5, 4)"></td>
+                        <td onclick="expandDay(5, 5)"></td>
+                        <td onclick="expandDay(5, 6)"></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div id="notification" class="discover" style="display:none;">
+                <div class="form">
+                    <div class="formCol">
+                        <h1>Discover</h1>
+                        <h2>Browse popular events by season</h2>
+                        <hr>
+                        <div class="formRow">
+                            <div class="seasonCol">
+                                <a href="">
+                                    <img src="rain.png">
+                                </a>
+                                <h3>Spring</h3>
+                            </div>                
+                            <div class="seasonCol">
+                                <a href="">
+                                    <img src="sun.png">
+                                </a>
+                                <h3>Summer</h3>
+                            </div>                        
+                            <div class="seasonCol">
+                                <a href="">
+                                    <img src="maple-leaf.png">
+                                </a>
+                                <h3>Fall</h3>
+                            </div>                
+                            <div class="seasonCol">
+                                <a href="">
+                                    <img src="snowflake.png">
+                                </a>
+                                <h3>Winter</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formCol">
+                        <h1>Notifications</h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div id = "eventForm" class = "createEvent" style = "display:none;">
+                <form action="#" id="form" method="post">
+                    <h1>Create an Event</h1>
+                    <div class="date">
+                        <h3>Date: </h3>
+                        <p id="date"></p>
+                        <h3>Time: </h3>
+                        <input type="time" name="eventTime">
+                    </div>
+
+                    <div class="eventName">
+                        <h3>Event Name</h3>
+                        <input id = eventName type="text" name="eventName">
+                    </div>
+
+                    <div class="eventDescription">
+                        <h3>Event Description</h3>
+                        <textarea rows = 6 cols = 28></textarea>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="eventType" value="public">Public<br>
+                        <input type="radio" name="eventType" value="private">Private<br>
+                    </div>
+                    <input id = "submit" name="submit" value="Create Event" type="submit">
+                </form>
+            </div>
+
+	   </section>
+    
+    </body>
+</html>

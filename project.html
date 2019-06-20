@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href="login.css">
+        <title>Calendar</title>
+        <script src="calendar.js"></script>
+    </head>
+
+    <body id="body">
+        
+        <header>
+            <div class="hLogo"><img src = "calendarLogo.png"></div>
+            <div class="hLoginLogo">
+                <button id = "loginpopup" onclick="div_show()">Login</button>
+            </div>
+        </header>
+        
+        <div id = "popuploginform" class = "loginForm" style = "display:none;">
+            <form action="/signin" id="form" method="post" name="form">
+                <style>h1{font-size: 4em;}</style>
+                <h1>Login</h1>
+                <hr>
+                <input id="username" name="username" placeholder="Username" type="text">
+                <input id="password" name="password" placeholder="Password" type="password" maxlength="25" style = "width: 250px; font-size: 1em;">
+                <input id = "submit" name="submit" value="Login" type="submit">
+            </form>
+        </div>
+        
+        <section class="landing">
+		  <div class="background-image" style="background-image: url(calendar_bg.png);"></div>
+		  <h1>Connect intuitively.</h1>
+		  <a href="#goToForm" class="btn">Sign up for free!</a>
+          <img src="jump.png">
+	   </section>
+        
+        <section class = "features">
+            <h3>Open up a world of possibilities</h3>
+            <div class = "featuresGrid">
+                <div class="gridItem">
+                    <p>Message instantly</p>
+                    <img src="email.png">
+                </div>
+                <div class="gridItem">
+                    <p>Share event locations</p>
+                    <img src="location.png">
+                </div>
+                <div class="gridItem">
+                    <p>Plan events</p>
+                    <img src = "handshake.png">
+                </div>
+            </div>
+        </section>
+        
+        <section class="design">
+            <h2>Customize events &#38; Save to the cloud</h2>
+            <div class = "designGrid">
+                <img src="image.png">
+                <hr>
+                <img src="cloud-computing.png">
+                <hr>
+                <img src="map.png">
+            </div>
+            <h3>Never miss a connection</h3>
+            <div class="designGrid">
+                <img src="man.png">
+                <hr>
+                <img src="user.png">
+            </div>
+        </section>
+        
+        <section id = goToForm class = "signUpForm">
+            <img src="file.png">
+            <div class="formContainer">
+                <div class = "formGrid">
+                    <h1>Let's Get Started</h1>
+                    <br>
+                    <p><input type="radio" name="terms"><a href="Terms.html">I have read the <span style = "text-decoration:underline"> terms and conditions</span></a></p>
+                </div>
+                <div class = "formGrid">
+                    <form>
+                        <div class="formInput">
+                            <p>Username</p>
+                            <input type="text" name="username">
+                        </div>
+                         <div class="formInput">
+                             <p>Password</p>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="formInput">
+                             <p>Confirm Password</p>
+                            <input type="password" name="password">
+                        </div>
+                        <div class="formInput">
+                            <p>
+                                <input type="submit" name="submitBtn" value="Create Account">
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+		      <div class="footerGrid">
+                    <a href = "http://facebook.com">
+                        <img src = "facebook.png">
+                    </a>
+                    <a href = "http://twitter.com">
+                        <img src = "twitter.png">
+                    </a>
+                    <a href = "http://instagram.com">
+                        <img src = "instagram.png">
+                    </a>
+              </div>
+		      <p>Copyright of Peyton Cleveland</p>
+              <p>&copy;2017</p>
+	    </footer>
+        
+    </body>
+    
+</html>

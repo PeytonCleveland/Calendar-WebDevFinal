@@ -1,0 +1,483 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    text-rendering:geometricPrecision;
+}
+
+@font-face{
+    font-family: Raleway-Thin;
+    src: url('Raleway-Thin.ttf');
+}
+
+@font-face{
+    font-family: Raleway-Light;
+    src: url('Raleway-Light.ttf');
+}
+
+html, body{
+	font-family: Raleway-Light;
+    font-size: 1em;
+	color: #555;
+    height: 100%;
+}
+
+section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    margin: 0px;
+	padding: 125px 100px;
+}
+
+header{
+    position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+    height: 13%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 10px 0;
+    background-image: url(calendar_bg.png);
+    background-size: cover;
+    background-position: 50% 58%;
+    background-blend-mode: lighten;
+}
+
+.hLogo img{
+    margin-bottom: 10px;
+}
+
+header img{
+    display: flex;
+    max-width: 50%;
+}
+
+.notificationBar img{
+    max-width: 35px;
+    max-height: 35px;
+    margin: 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.notificationBar img:hover{
+    cursor:pointer;
+    top:-8px;
+}
+
+.notificationBar{
+    display: flex;
+}
+
+.calendar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: #d7e0e3;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    width:25%;
+    height:75%;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+hr{
+    height: 15px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+.profileHeader{
+    display: flex;
+    flex-direction: row;
+    height: 28%;
+    width:100%;
+    background-image: url(calendar_bg.png);
+    background-size:auto;
+    background-position: 50% 58%;
+    color: #f5f5f5;
+    margin-bottom: 15px;
+}
+
+.name{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    font-size: 1.75em;
+    font-family: "Raleway-Thin";
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin: 6px;
+    font-size: .9em;
+}
+
+.infoFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.infoFooter h2{
+    font-size: 1.4em;
+    position: relative;
+    color: #313131;
+}
+
+.infoFooter h2:hover{
+    top:-5px;
+    cursor: pointer;
+}
+
+.info img{
+    max-height: 25px;
+    margin-right: 25px;
+    margin-top: -5px;
+}
+
+.img-circle {
+    border-radius: 50%;
+    margin-left: -30px;
+    margin-top: -11px;
+    width:110px;
+    height:110px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.img-circle img{
+    max-height: 100%;
+    position: relative;
+    right: 30px;
+    z-index: 11;
+}
+
+.calendarGrid{
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    height:135%;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-top: 70px;
+}
+
+.calendarHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    height: 15%;
+    width:100%;
+    background-image: url(calendar_bg.png);
+    background-size:auto;
+    background-position: 50% 58%;
+    color: #f5f5f5;
+    margin-bottom: 15px;
+}
+
+.calendarHeader p{
+    font-size: 4em;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: "Raleway-Thin";
+    margin-bottom: 4px;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none;
+}
+
+.calendarHeader h1{
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none;
+    font-size: 3em;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: "Raleway-Thin";
+    margin-bottom: 4px;
+}
+
+.calendarHeader h1:hover{
+    cursor: pointer;
+    font-size: 4em;
+    margin-left: 17px;
+    margin-right: 17px;
+}
+
+.days{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none;
+}
+
+.days h3{
+    font-size: 1.5em;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: -5px;
+    width: 60px;
+    height: 25px;
+}
+
+.calendarGrid table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    height: 100%;
+}
+
+.calendarGrid td{
+    width:110px;
+    height: 65px;
+    text-align: left;
+    vertical-align: top;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none;
+}
+
+.calendarGrid td:hover{
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.createEvent{
+    width:100%;
+    height:100%;
+    opacity:1;
+    top:0;
+    left:0;
+    display:flex;
+    position:fixed;
+    background-color:rgba(49, 49, 49, 0.7);
+    overflow:auto;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.createEvent form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width:400px;
+    min-width:450px;
+    min-height: 400px;
+    padding:10px 50px;
+    border-radius:10px;
+    font-family:Raleway-Light;
+    background-color:#fff
+}
+
+input[type=submit] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 35px;
+    font-size: 1.5em;
+    font-family: Raleway-Light;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+.radio{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 45px;
+    margin-bottom: 10px;
+}
+
+.radio input[type=radio]{
+    display: flex;
+    margin-right: 0;
+    margin-left: 50px;
+}
+
+.createEvent input[type=text]{
+    display: flex;
+    font-family: Raleway-Light;
+    font-size: 1em;
+    color: #555;
+    border-radius: 2px;
+    border: 1px solid gray;
+    height: 30px;
+    width: 200px;
+    margin: 10px;
+}
+
+.createEvent h1{
+    font-size: 3em;
+    position: relative;
+    top: -5px;
+}
+
+.createEvent input[type=time]{
+    display: flex;
+    font-family: Raleway-Light;
+    font-size: 1em;
+    color: #555;
+    border-radius: 2px;
+    border: 1px solid gray;
+    height: 30px;
+    width: 120px;
+    margin-left: 10px;
+}
+
+.date{
+    display: flex;
+    margin-top: 20px;
+    width: 115%;
+    padding-left: 35px;
+}
+
+.date p{
+    font-size: 1em;
+    margin-left: 10px;
+    padding-top: 3px;
+    margin-right: 14px;
+}
+
+.eventName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.eventName input[type=text]{
+    width: 209px;
+    margin-right: 0px;
+}
+
+.eventName h3{
+    margin: 10px;
+}
+
+.eventDescription{
+    width: 125%;
+    height:125px;
+    margin-top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eventDescription textarea{
+    resize: none;
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-family: "Raleway-Light";
+    color: gray;
+    font-size: 1em;
+}
+
+.eventDescription h3{
+    margin-right: 10px;
+}
+
+.discover{
+    width:100%;
+    height:100%;
+    opacity:1;
+    top:0;
+    left:0;
+    display:flex;
+    position:fixed;
+    background-color:rgba(49, 49, 49, 0.7);
+    overflow:auto;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.discover h1{
+    font-size: 4em;
+    margin-bottom: 30px;
+}
+
+.form{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-direction: row;
+    max-width:1000px;
+    min-width:900px;
+    min-height: 500px;
+    padding:10px 50px;
+    border-radius:10px;
+    font-family:Raleway-Light;
+    background-color:#fff
+}
+
+.formCol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    padding: 40px;
+}
+
+.formRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.seasonCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.seasonCol img{
+    width: 75px;
+}
+
+.seasonCol img:hover{
+    position: relative;
+    top:-10px;
+}

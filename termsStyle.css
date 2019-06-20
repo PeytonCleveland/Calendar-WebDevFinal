@@ -1,0 +1,121 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    text-rendering:geometricPrecision;
+}
+
+@font-face{
+    font-family: Raleway-Thin;
+    src: url('Raleway-Thin.ttf');
+}
+
+@font-face{
+    font-family: Raleway-Light;
+    src: url('Raleway-Light.ttf');
+}
+
+html{
+	font-family: Raleway-Light;
+	color: #555;
+}
+
+body{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+	width: 100%;
+    height: 5%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    background-image: url(calendar_bg.png);
+    background-position: 50% 55%;
+}
+
+.hLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    min-width: 150px;
+}
+
+.hLogo img {
+    max-width: 100%;
+}
+
+.hLoginLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 12%;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.hLoginLogo img {
+    max-width: 100%;
+}
+
+h2{
+    font-size: 3em;
+    text-align: center;
+    margin: 40px;
+}
+
+h3{
+    font-size: 2em;
+    margin-left: 100px;
+    margin-bottom: 15px;
+}
+
+p{
+    font-size: 1.25em;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 15px;
+}
+
+ol{
+    font-size: 1.25em;
+    margin-left: 115px;
+    margin-right: 100px;
+    margin-bottom: 15px;
+}
+
+ul{
+    font-size: 1.2em;
+    margin-left: 115px;
+    margin-bottom: 10px;
+    margin-right: 100px;
+}
+
+footer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	color: #fff;
+	background-color: #414a4f;
+	padding: 60px 0;
+    margin-top: 20px;
+}
+
+.footerGrid{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+footer img {
+    max-width: 60px;
+    margin: 10px;
+}

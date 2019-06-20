@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  		<% include ../layout/head %>
+  		 <style>
+      #footer{
+      position: absolute;
+      bottom:0;
+      width: 1450px;
+      text-align:center;
+      padding: 3px;
+      color: white;
+      background-color: black;
+      }
+      </style>
+  		<title>Add New Event</title>
+   </head>
+   <body>
+
+		<div class="container">
+        <center>
+	      <form class="form-signin" action="/add-event" method="post">
+
+	        <h2 class="form-signin-heading">Add event in public</h2>
+	        <input type="text" name="username" style="width: 500px; height: 60px" class="form-control" placeholder="username" required autofocus>
+	        <input type="text" name="time" style="width: 500px; height: 60px" class="form-control" placeholder="event time" required>
+	        <input type="text" name="content" style="width: 500px; height: 60px" class="form-control" placeholder="event cotent" required>
+	        <button style="width: 500px" class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+	      </form>
+        </center>
+	    </div>
+   		
+   </body>
+     <footer id="footer">
+          <p>&copy; 2017 Cal. All right reserved.</p>
+     </footer>
+</html>

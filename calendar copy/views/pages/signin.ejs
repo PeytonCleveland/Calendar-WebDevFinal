@@ -1,0 +1,517 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+  <head>
+  		<% include ../layout/head %>
+      <style>
+      #footer{
+      position: absolute;
+      bottom:0;
+      width: 1450px;
+      text-align:center;
+      padding: 3px;
+      color: white;
+      background-color: black;
+      }
+      </style>
+  		<title>Signin Calendar</title>
+   </head>
+   <body>
+       
+       <img src="../img/calendaricon.png" img style="position:absolute; top: 125px; left:365px" align="right" width="100" height="100">
+       
+
+		<div class="container">
+        <center>
+	      <form class="form-signin" action="/signin" method="post">
+
+	        <h2 class="form-signin-heading">Cal.</h2>
+	        <input type="text" name="username" style="width: 500px; height: 50px" class="form-control" placeholder="Username" required autofocus>
+	        <input type="password" name="password" style="width: 500px; height: 50px" class="form-control" placeholder="Password" required>
+	        <button style="width: 500px;" class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+	      </form>
+        </center>
+
+	    </div>
+   </body>
+  <footer id="footer">
+          <p>&copy; 2017 Cal. All right reserved.</p>
+  </footer>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href="login.css">
+        <title>Calendar</title>
+        <script src="calendar.js"></script>
+    </head>
+<style>
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    text-rendering:geometricPrecision;
+}
+
+@font-face{
+    font-family: Raleway-Thin;
+    src: url('Raleway-Thin.ttf');
+}
+
+@font-face{
+    font-family: Raleway-Light;
+    src: url('Raleway-Light.ttf');
+}
+
+html{
+  font-family: Raleway-Light;
+    font-size: 1em;
+  color: #555;
+}
+
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    margin: 0px;
+  padding: 125px 100px;
+}
+
+header{
+    position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+    height: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 0;
+}
+
+header button{
+    display: flex;
+    width: 130px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-family: Raleway-Light;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid;
+    border-radius: 4px;
+    border-color: white;
+}
+
+header button:hover{
+    cursor: pointer;
+}
+
+.hLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin: 25px;
+}
+
+.hLogo img {
+    max-width: 100%;
+}
+
+.hLoginLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 10%;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.hLoginLogo img {
+    max-width: 100%;
+}
+
+.loginForm {
+    width:100%;
+    height:100%;
+    opacity:1;
+    top:0;
+    left:0;
+    display:flex;
+    position:fixed;
+    background-color:rgba(49, 49, 49, 0.7);
+    overflow:auto;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.loginForm form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width:400px;
+    min-width:450px;
+    min-height: 300px;
+    padding:10px 50px;
+    border-radius:10px;
+    font-family:Raleway-Light;
+    background-color:#fff
+}
+
+.loginForm input[type="text"], input[type="password"]{
+    display: flex;
+    min-width: 100px;
+    width: 250px;
+    min-height: 30px;
+    height: 40px;
+    margin: 10px;
+    font-size: 1em;
+    font-family: Raleway-Light;
+}
+
+.loginForm input[type=submit]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    font-size: 1.2em;
+    font-family: Raleway-Light;
+}
+
+.landing{
+    display: flex;
+    flex-direction: column;
+  position: relative;
+  justify-content: center;
+    align-items: center;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+.landing .background-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size:cover;
+    z-index: -1;
+}
+
+.landing h1{
+  font-family: Raleway-Thin;
+    font-size: 4em;
+    margin-top: 100px;
+  margin-bottom: 15px;
+}
+
+.landing a.btn{
+  padding: 7px 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 6px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Raleway-Light;
+    font-size: 1.9em;
+    color: #79a6b1;
+}
+
+.landing img{
+    margin-top: 150px;
+}
+
+.features {
+    background-color: #fff;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.features h3 {
+    font-size: 2em;
+}
+
+.featuresGrid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.gridItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    max-width: 35%;
+    font-size: 1em;
+}
+.gridItem img {
+    max-width: 65%;
+    margin: 15px;
+}
+
+.design{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+    justify-content: center;
+  text-align:center;
+  color: #fff;
+  background-color: #414a4f;
+    padding-bottom: 200px;
+}
+
+.design h2 {
+    font-size: 3.75em;
+    margin: 40px;
+}
+
+.design h3 {
+    font-size: 3em;
+    margin: 40px;
+}
+
+.design hr {
+    min-width: 75px;
+    width: 350px;
+    color: white;
+}
+
+.designGrid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+}
+
+.design img{
+    margin: 25px;
+    width: 130px;
+    max-width: 300px;
+}
+
+.signUpForm {
+    background-color: #fff;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
+
+.signUpForm h1{
+    font-size: 4em;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.signUpForm p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #414a4f;
+    font-size: .85em;
+}
+
+.signUpForm a{
+    text-decoration: none;
+    color: #414a4f;
+}
+
+.signUpFormGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.signUpForm input[type="text"], input[type="password"]{
+    display: flex;
+    min-width: 200px;
+    width: 420px;
+    min-height: 30px;
+    height: 40px;
+    margin: 10px;
+    font-size: .75em;
+    font-family: Raleway-Light;
+}
+
+.signUpForm input[type = "submit"]{
+    display: flex;
+    font-family: Raleway-Light;
+    font-size: .85em;
+    padding: 10px 50px 10px;
+    color: #414a4f;
+    margin-top: 15px;
+}
+
+.signUpForm input[type = "radio"]{
+    display: flex;
+    margin-right: 10px;
+    margin-left: -100px;
+}
+
+.signUpForm img{
+    max-width: 200px;
+    margin-top: -250px;
+    margin-bottom: 30px;
+    margin-left: 35px;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-color: #414a4f;
+  padding: 60px 0;
+}
+
+.footerGrid{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+footer img {
+    max-width: 60px;
+    margin: 10px;
+}
+</style>
+
+    
+
+    <body id="body">
+        
+        <header>
+            <div class="hLogo"><img src = "/img/calendarLogo.png"></div>
+            <div class="hLoginLogo">
+                <button id = "loginpopup" onclick="div_show()">Login</button>
+            </div>
+        </header>
+        
+        <div id = "popuploginform" class = "loginForm" style = "display:none;">
+            <form action="/signin" id="form" method="post" name="form">
+                <style>h1{font-size: 4em;}</style>
+                <h1>Login</h1>
+                <hr>
+                <input id="username" name="username" placeholder="Username" type="text">
+                <input id="password" name="password" placeholder="Password" type="password" maxlength="25" style = "width: 250px; font-size: 1em;">
+                <input id = "submit" name="submit" value="Login" type="submit">
+            </form>
+        </div>
+        
+        <section class="landing">
+      <div class="background-image" style="background-image: url(/img/calendar_bg.png);"></div>
+      <h1>Connect intuitively.</h1>
+      <a href="#goToForm" class="btn">Sign up for free!</a>
+          <img src=/img/jump.png>
+     </section>
+        
+        <section class = "features">
+            <h3>Open up a world of possibilities</h3>
+            <div class = "featuresGrid">
+                <div class="gridItem">
+                    <p>Message instantly</p>
+                    <img src=/img/email.png>
+                </div>
+                <div class="gridItem">
+                    <p>Share event locations</p>
+                    <img src=/img/location.png>
+                </div>
+                <div class="gridItem">
+                    <p>Plan events</p>
+                    <img src = /img/handshake.png>
+                </div>
+            </div>
+        </section>
+        
+        <section class="design">
+            <h2>Customize events &#38; Save to the cloud</h2>
+            <div class = "designGrid">
+                <img src="/img/image.png">
+                <hr>
+                <img src=/img/cloud-computing.png>
+                <hr>
+                <img src=/img/map.png>
+            </div>
+            <h3>Never miss a connection</h3>
+            <div class="designGrid">
+                <img src=/img/man.png>
+                <hr>
+                <img src=/img/user.png>
+            </div>
+        </section>
+        
+        
+        <section id = goToForm class = "signUpForm">
+            <img src=/img/file.png>
+            <div class="formContainer">
+                <div class = "formGrid">
+                    <h1>Let's Get Started</h1>
+                    <br>
+                    <p><input type="radio" name="terms"><a href="Terms.html">I have read the <span style = "text-decoration:underline"> terms and conditions</span></a></p>
+                </div>
+        </section>
+        
+        <footer>
+          <div class="footerGrid">
+                    <a href = "http://twitter.com">
+                        <img src = /img/twitter.png>
+                    </a>
+                    <a href = "http://instagram.com">
+                        <img src = /img/instagram.png>
+                    </a>
+                    <a href = "http://facebook.com">
+                    <img src = "/img/facebook.png">
+                    </a>
+              </div>
+          <p>Cal.</p>
+              <p>&copy;2017</p>
+      </footer>
+        <script>
+    var shown = false;
+
+function div_show() {
+    document.getElementById('popuploginform').style.display = "flex";
+    document.getElementById('body').onclick = function(e) {
+        if(shown){
+            if(e.target != document.getElementById('popuploginform')) {   
+            } else {
+                div_hide(); 
+            }
+        }
+        shown = true;
+    }
+}
+
+function div_hide() {
+    document.getElementById("popuploginform").style.display = "none";
+    shown = false;
+}
+</script>
+    </body>   
+</html>
